@@ -1,0 +1,689 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1.6rem;
+  line-height: 1.8;
+  font-family: "Raleway", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:focus,
+a:hover {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure {
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+.w-85 {
+  width: 85%;
+}
+
+.w_75 {
+  width: 75%;
+}
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+}
+.site-header .site-logo a {
+  font-size: 1.5rem;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  padding: 1.6rem;
+}
+@media screen and (max-width: 768px) {
+  .site-header .site-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 30rem;
+    background: #262626;
+    transform: translateX(100%);
+    transition: all 0.3s ease-in-out;
+  }
+}
+.site-header .site-menu ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.site-header .site-menu ul .closed-menu {
+  color: #fff;
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .site-header .site-menu ul .closed-menu {
+    display: block;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .site-header .site-menu ul {
+    flex-direction: column;
+    padding: 6rem 8rem;
+  }
+}
+.site-header .site-menu ul a {
+  font-size: 1.5rem;
+  display: inline-block;
+  text-transform: uppercase;
+  padding: 1.6rem;
+  transition: all 0.2s linear;
+  position: relative;
+}
+.site-header .site-menu ul a:hover {
+  background: #ccc;
+}
+.site-header .site-menu ul a:hover::after {
+  width: 100%;
+}
+.site-header .site-menu ul a::after {
+  content: "";
+  border-bottom: 2px solid #000;
+  position: absolute;
+  width: 0%;
+  top: 80%;
+  left: 0;
+  transition: all 0.3s linear;
+}
+.site-header .site-menu ul a.active::after {
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .site-header .site-menu ul a {
+    color: #fff;
+    padding: 1rem;
+  }
+}
+.site-header .menu-toggle {
+  display: none;
+  padding: 1.6rem;
+}
+@media screen and (max-width: 768px) {
+  .site-header .menu-toggle {
+    display: block;
+  }
+}
+
+.toggle .site-menu {
+  transform: translateX(0);
+}
+
+.site-banner {
+  background: url(../images/mac.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 690px;
+  filter: grayscale(50%);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+@media screen and (max-width: 575px) {
+  .site-banner {
+    height: 500px;
+  }
+}
+.site-banner .banner-content {
+  padding: 3rem 4rem;
+  color: #fff;
+}
+.site-banner .banner-content h1 {
+  font-size: 6.4rem;
+  margin-bottom: 4rem;
+  font-weight: 400;
+}
+@media screen and (max-width: 575px) {
+  .site-banner .banner-content h1 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .site-banner .banner-content h1 {
+    font-size: 4rem;
+  }
+}
+.site-banner .banner-content p {
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+}
+@media screen and (max-width: 575px) {
+  .site-banner .banner-content p {
+    font-size: 1.4rem;
+  }
+}
+.site-banner .banner-content .banner-btn {
+  display: inline-block;
+  font-size: 1.8rem;
+  padding: 1.2rem 2.4rem;
+  background: #fff;
+  color: #000;
+  opacity: 0.6;
+  transition: all 0.2s linear;
+}
+.site-banner .banner-content .banner-btn:hover {
+  opacity: 1;
+}
+@media screen and (max-width: 575px) {
+  .site-banner .banner-content .banner-btn {
+    font-size: 1.4rem;
+    padding: 1rem 2rem;
+  }
+}
+.site-banner .social {
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+  color: #757575;
+  font-size: 2rem;
+}
+
+.about {
+  padding: 12.8rem 0;
+}
+@media screen and (max-width: 575px) {
+  .about {
+    padding: 6.4rem 0;
+  }
+}
+.about h2 {
+  font-size: 2.4rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  font-weight: 400;
+}
+.about p {
+  font-size: 1.8rem;
+  text-align: center;
+}
+.about .grid {
+  margin-top: 6.4rem;
+  padding: 0 0.5rem;
+}
+.about .grid .items {
+  text-align: center;
+  padding: 0 1rem;
+}
+.about .grid .items span {
+  display: inline-block;
+  font-size: 6rem;
+}
+.about .grid .items h4 {
+  font-size: 1.8rem;
+  margin: 1.8rem 0;
+}
+.about .grid .items p {
+  font-size: 1.5rem;
+}
+
+.design {
+  padding: 12.8rem 0;
+  background: #f1f1f1;
+}
+@media screen and (max-width: 575px) {
+  .design {
+    padding: 6.4rem 0;
+  }
+}
+.design .grid {
+  padding: 0 3rem;
+}
+.design .grid .items h4 {
+  font-size: 2.4rem;
+  font-weight: 400;
+}
+.design .grid .items p {
+  font-size: 1.5rem;
+  margin: 2rem 0 1.5rem;
+  max-width: 500px;
+}
+.design .grid .items a {
+  display: inline-block;
+  font-size: 1.5rem;
+  background-color: #000;
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  transition: all 0.3s linear;
+}
+.design .grid .items a:hover {
+  color: #000;
+  background-color: #ccc;
+}
+.design .grid .items a i {
+  display: inline-block;
+  padding-right: 0.5rem;
+}
+@media screen and (max-width: 768px) {
+  .design .grid .items a {
+    margin-bottom: 4rem;
+  }
+}
+.design .grid .items img {
+  border-radius: 0.8rem;
+}
+
+.team {
+  padding: 12.8rem 0;
+}
+@media screen and (max-width: 575px) {
+  .team {
+    padding: 6.4rem 0;
+  }
+}
+.team h2 {
+  font-size: 2.4rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  font-weight: 400;
+}
+.team p {
+  font-size: 1.8rem;
+  text-align: center;
+}
+.team .grid {
+  padding: 0 2rem;
+  margin-top: 6.4rem;
+}
+.team .grid .items {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+@media screen and (max-width: 991px) {
+  .team .grid .items {
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .team .grid .items {
+    margin-bottom: 4rem;
+  }
+}
+.team .grid .items img {
+  filter: grayscale(70%);
+  width: 100%;
+}
+.team .grid .items .content {
+  padding: 1.5rem;
+}
+.team .grid .items .content h4 {
+  font-size: 2.4rem;
+  font-weight: 400;
+}
+.team .grid .items .content span {
+  display: inline-block;
+  font-size: 1.5rem;
+  margin: 2rem 0;
+  opacity: 0.6;
+}
+.team .grid .items .content p {
+  font-size: 1.5rem;
+  text-align: left;
+  max-width: 300px;
+  margin-bottom: 1rem;
+}
+.team .grid .items .content a {
+  display: block;
+  background: #f1f1f1;
+  color: #000;
+  text-align: center;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+}
+.team .grid .items .content a:hover {
+  color: #000;
+  background-color: #ccc;
+}
+
+.reviews {
+  background: #616161;
+  padding: 6.4rem 0;
+}
+@media screen and (max-width: 575px) {
+  .reviews {
+    padding: 6.4rem 0;
+  }
+}
+.reviews .grid .item {
+  text-align: center;
+}
+.reviews .grid .item h4 {
+  font-size: 3.6rem;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.reviews .grid .item p {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.our-work {
+  padding: 12.8rem 0;
+}
+@media screen and (max-width: 575px) {
+  .our-work {
+    padding: 6.4rem 0;
+  }
+}
+.our-work h2 {
+  font-size: 2.4rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  font-weight: 400;
+}
+.our-work p {
+  font-size: 1.8rem;
+  text-align: center;
+}
+.our-work .grid {
+  padding: 0 2rem;
+  margin-top: 6.4rem;
+}
+.our-work .grid .items {
+  margin-bottom: 2rem;
+}
+.our-work .grid .items img {
+  width: 100%;
+  transform: all 0.2s linear;
+}
+.our-work .grid .items img:hover {
+  opacity: 0.6;
+}
+
+.our-skills {
+  background: #f1f1f1;
+  padding: 6.4rem 0;
+}
+@media screen and (max-width: 575px) {
+  .our-skills {
+    padding: 6.4rem 0;
+  }
+}
+.our-skills .grid {
+  padding: 0 2rem;
+}
+.our-skills .grid .items h2 {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+.our-skills .grid .items p {
+  font-size: 1.5rem;
+  max-width: 600px;
+  margin-bottom: 1rem;
+}
+.our-skills .grid .items li:nth-child(even) {
+  background: #9e9e9e;
+}
+.our-skills .grid .items li:nth-child(even) span {
+  display: block;
+  background: #616161;
+  text-align: center;
+  color: #fff;
+}
+.our-skills .grid .items li p {
+  margin: 1.5rem 0;
+  letter-spacing: 0.4rem;
+}
+
+.pricing-sec .container-fluid > h2 {
+  font-size: 2.4rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  font-weight: 400;
+  color: #fff;
+}
+.pricing-sec .container-fluid > p {
+  font-size: 1.8rem;
+  text-align: center;
+  color: #fff;
+}
+
+.pricing-sec {
+  padding: 12.8rem 0;
+  background: #616161;
+}
+@media screen and (max-width: 575px) {
+  .pricing-sec {
+    padding: 6.4rem 0;
+  }
+}
+.pricing-sec .grid {
+  margin-top: 7.4rem;
+  padding: 0 2rem;
+}
+@media screen and (max-width: 768px) {
+  .pricing-sec .grid .items {
+    margin-bottom: 2rem;
+  }
+}
+.pricing-sec .grid .items li {
+  background: #fff;
+  border-bottom: 0.1rem solid #ddd;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1.6rem 0;
+}
+.pricing-sec .grid .items li h2 {
+  font-size: 2.4rem;
+  font-weight: 400;
+  padding: 3.2rem 0;
+  text-align: center;
+  background: #000;
+  color: #fff;
+}
+.pricing-sec .grid .items li p {
+  display: inline-block;
+}
+.pricing-sec .grid .items li span {
+  display: inline-block;
+  font-weight: 600;
+  padding-right: 0.5rem;
+}
+.pricing-sec .grid .items li a {
+  display: inline-block;
+  font-size: 1.5rem;
+  background-color: #000;
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  transition: all 0.3s linear;
+  padding: 1.2rem 2.4rem;
+}
+.pricing-sec .grid .items li a:hover {
+  color: #000;
+  background-color: #ccc;
+}
+.pricing-sec .grid .items li:first-child {
+  padding: 0;
+}
+.pricing-sec .grid .items li:last-child {
+  background: #f1f1f1;
+}
+
+.pricing-sec .grid .row .col-md-4:nth-child(2) .items li {
+  transform: translateY(-20px);
+}
+@media screen and (max-width: 768px) {
+  .pricing-sec .grid .row .col-md-4:nth-child(2) .items li {
+    transform: translateY(0);
+  }
+}
+.pricing-sec .grid .row .col-md-4:nth-child(2) .items li h2 {
+  background: #f44336;
+  padding: 4.8rem 0;
+}
+
+.pricing-sec .grid .items li:nth-child(6) span {
+  font-size: 3rem;
+  display: block;
+  font-weight: 400;
+}
+.pricing-sec .grid .items li:nth-child(6) p {
+  opacity: 0.6;
+}
+
+.contact {
+  padding: 12.8rem 0;
+  background: #f1f1f1;
+}
+@media screen and (max-width: 575px) {
+  .contact {
+    padding: 6.4rem 0;
+  }
+}
+.contact h2 {
+  font-size: 2.4rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  font-weight: 400;
+}
+.contact p {
+  font-size: 1.8rem;
+  text-align: center;
+}
+.contact .content {
+  margin: 6.4rem 0 5rem;
+  padding: 0 2rem;
+}
+.contact .content li {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.contact .content li i {
+  display: inline-block;
+  font-size: 3.5rem;
+  min-width: 5rem;
+  text-align: center;
+  margin-right: 2rem;
+}
+.contact .contact-form {
+  padding: 0 2rem;
+}
+.contact .contact-form a {
+  display: inline-block;
+  font-size: 1.5rem;
+  background-color: #000;
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  transition: all 0.3s linear;
+}
+.contact .contact-form a:hover {
+  color: #000;
+  background-color: #ccc;
+}
+.contact .contact-form .form-group {
+  margin-bottom: 1.5rem;
+}
+.contact .contact-form .form-group .input-control {
+  width: 100%;
+  display: block;
+  padding: 0.8rem;
+  font-size: 1.5rem;
+  border: 0.1rem solid #ddd;
+}
+
+.map {
+  background: #f1f1f1;
+}
+.map iframe {
+  width: 100%;
+  height: 600px;
+  padding: 0 2rem;
+}
+
+.site-footer {
+  background: #000;
+  padding: 6.4rem 0;
+}
+.site-footer .content {
+  text-align: center;
+  color: #fff;
+}
+.site-footer .content p {
+  font-size: 1.5rem;
+}
+.site-footer .content .social {
+  margin: 1.5rem 0 1.8rem;
+}
+.site-footer .content .social a {
+  display: inline-block;
+  font-size: 2.5rem;
+  transition: all 0.2s linear;
+}
+.site-footer .content .social a:hover {
+  opacity: 0.6;
+}
+.site-footer .content .footer-btn {
+  display: inline-block;
+  font-size: 1.5rem;
+  background-color: #000;
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  transition: all 0.3s linear;
+  background: #fff;
+  color: #000;
+}
+.site-footer .content .footer-btn:hover {
+  color: #000;
+  background-color: #ccc;
+}
+.site-footer .content .footer-btn i {
+  display: inline-block;
+  padding-right: 1rem;
+}
+
+/*# sourceMappingURL=style.css.map */
